@@ -52,6 +52,6 @@ app.use("/task", taskRoute);
 // AUTH
 app.use("/auth", authRoute);
 
-app.listen(PORT, ()=>{
-    console.log(`Server Running on port ${PORT}`)
-})
+// app.listen(PORT, ()=>{
+//     console.log(`Server Running on port ${PORT}`)
+// })
