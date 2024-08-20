@@ -1,7 +1,6 @@
 import passport from "passport";
 import User from "../models/User.js";
-import bcrypt from "bcrypt";
-import { ValidationError } from "sequelize";
+import bcrypt from "bcryptjs"; // diubah menjadi bcryptjs
 
 export default {
     registerUser: async(req,res)=>{
