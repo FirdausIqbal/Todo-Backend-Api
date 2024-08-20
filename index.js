@@ -40,7 +40,7 @@ app.use(passport.session());
 init();
 
 app.get("/", (req, res) => {
-    res.send('Hello Worlds')
+    res.send('Hello World')
 })
 
 // USER
