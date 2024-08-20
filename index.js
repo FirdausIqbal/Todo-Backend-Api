@@ -39,9 +39,9 @@ app.use(passport.session());
 
 init();
 
-// app.get("/", (req, res) => {
-
-// })
+app.get("/", (req, res) => {
+    res.send('Hello World')
+})
 
 // USER
 app.use("/user",  userRoute);
