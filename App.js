@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cors({
-    origin: "https://todo-app-firdausiqbal.vercel.app/",
+    origin: "https://todo-lqf0ydlu9-firdaus-iqbals-projects.vercel.app/",
     credentials: true,
 }));
 
