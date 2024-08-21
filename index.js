@@ -31,8 +31,7 @@ app.use(session(
         saveUninitialized: true,
         cookie: {
             secure: process.env.ENV === "prod" ? true : false,
-            sameSite: process.env.ENV === "prod" ? "None" : false,
-            httpOnly: false,
+            sameSite: process.env.ENV === "prod" ? "none" : false,
             maxAge: 10 * 60 * 1000
         },
         store: new MemoryStore({
