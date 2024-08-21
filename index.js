@@ -12,6 +12,9 @@ import createMemoryStore from "memorystore";
 const MemoryStore = createMemoryStore(session)
 const app = express();
 const PORT = 3001;
+
+app.set('trust proxy', 1);
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
@@ -30,7 +33,6 @@ app.use(session(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            domain: "todo-app-firdausiqbal.vercel.app",
             secure: process.env.ENV === "prod" ? true : false,
             sameSite: process.env.ENV === "prod" ? "none" : false,
             maxAge: 10 * 60 * 1000
