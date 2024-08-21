@@ -1,4 +1,5 @@
 import dotenv from "dotenv"
+import pg from "pg"
 dotenv.config();
 export default {
   "database": process.env.DB_NAME,
@@ -6,5 +7,6 @@ export default {
   "password": process.env.DB_PW,
   "host": process.env.DB_HOST,
   "dialect": process.env.DB_NAME,
+  "dialectModule": pg,
   "logging": false
 }
