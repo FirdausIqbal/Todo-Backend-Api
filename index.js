@@ -22,6 +22,10 @@ app.use(cors({
 
 app.use(cookieParser())
 
+console.log({
+    secure: process.env.ENV === "prod" ? true : false,
+    sameSite: process.env.ENV === "prod" ? "None" : false
+})
 app.use(session(
     {
         secret: process.env.SESSION_KEY,
