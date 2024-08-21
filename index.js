@@ -29,6 +29,7 @@ app.use(session(
         saveUninitialized: true,
         cookie: {
             secure: process.env.ENV === "prod" ? true : false,
+            sameSite: false,
             maxAge: 10 * 60 * 1000
         }
     }
