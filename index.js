@@ -7,7 +7,9 @@ import authRoute from "./routes/auth.js";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import passport from "./middleware/strategyConfig.js";
+import createMemoryStore from "memorystore";
 
+const MemoryStore = createMemoryStore(session)
 const app = express();
 const PORT = 3001;
 app.use(express.json());
@@ -32,7 +34,10 @@ app.use(session(
             sameSite: process.env.ENV === "prod" ? "None" : false,
             httpOnly: false,
             maxAge: 10 * 60 * 1000
-        }
+        },
+        store: new MemoryStore({
+            checkPeriod: 86400000
+        })
     }
 ));
 
