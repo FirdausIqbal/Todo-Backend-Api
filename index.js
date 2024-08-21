@@ -30,6 +30,7 @@ app.use(session(
         cookie: {
             secure: process.env.ENV === "prod" ? true : false,
             sameSite: process.env.ENV === "prod" ? "None" : false,
+            httpOnly: false,
             maxAge: 10 * 60 * 1000
         }
     }
@@ -42,10 +43,6 @@ init();
 
 app.get("/", (req, res) => {
     res.send('Hello World')
-    console.log({
-        secure: process.env.ENV === "prod" ? true : false,
-        sameSite: process.env.ENV === "prod" ? "None" : false
-    })
 })
 
 // USER
