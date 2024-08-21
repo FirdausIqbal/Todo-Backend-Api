@@ -30,7 +30,7 @@ app.use(session(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            domain: "todo-backend-api-eta.vercel.app",
+            domain: "todo-app-firdausiqbal.vercel.app",
             secure: process.env.ENV === "prod" ? true : false,
             sameSite: process.env.ENV === "prod" ? "none" : false,
             maxAge: 10 * 60 * 1000
