@@ -13,13 +13,13 @@ const MemoryStore = createMemoryStore(session)
 const app = express();
 const PORT = 3001;
 
-app.set('trust proxy', 1);
+app.set('trust proxy', 1); // untuk production ini perlu diperhatikan (terutama di vercel)
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(cors({
-    origin: "https://todo-app-firdausiqbal.vercel.app",
+    origin: process.env.ENV === "prod" ? "https://todo-app-firdausiqbal.vercel.app" : "http://localhost:3000",
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,

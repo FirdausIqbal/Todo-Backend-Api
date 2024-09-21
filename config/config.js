@@ -6,7 +6,7 @@ export default {
   "username": process.env.DB_USERNAME,
   "password": process.env.DB_PW,
   "host": process.env.DB_HOST,
-  "dialect": process.env.DB_NAME,
+  "dialect": "postgres",
   "dialectModule": pg,
   "logging": false
 }

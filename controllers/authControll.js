@@ -6,7 +6,7 @@ export default {
     registerUser: async(req,res)=>{
         try {
             const hashedPw = bcrypt.hashSync(req.body.password, 10);
-            if(req.body.username.trim() === ""){ 
+            if(req.body.username.trim() === "" || req.body.password.trim() === ""){ 
                 res.status(400).json({message: "Fields Cannot Empty"})
             } else {
                 const newUser = await User.create(
