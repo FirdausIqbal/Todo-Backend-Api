@@ -13,7 +13,7 @@ const MemoryStore = createMemoryStore(session)
 const app = express();
 const PORT = 3001;
 
-app.set('trust proxy', 1); // untuk production ini perlu diperhatikan (terutama di vercel)
+app.set('trust proxy', 1); 
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
